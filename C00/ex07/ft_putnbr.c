@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 09:55:41 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/20 10:07:17 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/20 18:06:32 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/20 18:09:59 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-#incldue <unistd.h>
-
-void ft_is_negative(int n)
+void ft_putnbr(int nb)
 {
-	if (n <0)
-		write(1, &'N', 1);
-	else 
-		write(1, &'P', 1);
-}
+	
