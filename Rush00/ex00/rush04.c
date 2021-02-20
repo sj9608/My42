@@ -6,9 +6,11 @@
 /*   By: mkim2 <mkim2@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:04:12 by mkim2             #+#    #+#             */
-/*   Updated: 2021/02/20 17:48:11 by mkim2            ###   ########.fr       */
+/*   Updated: 2021/02/21 00:51:58 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	print_char(int col, int row, int col_max, int row_max)
 {
