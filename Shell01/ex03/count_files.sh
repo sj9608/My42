@@ -1,2 +1,1 @@
-#!/bin/bash
-find . | wc -l
+find . | wc -l | sed 's/[[:space:]]//g' | tr -d '\n'
