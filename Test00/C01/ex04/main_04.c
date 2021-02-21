@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   main_04.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 22:59:19 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/21 01:26:42 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/21 02:59:21 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/21 03:01:16 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+#include <stdio.h>
+
+void	ft_ultimate_div_mod(int *a, int *b);
+
+int main(void)
 {
-	*nbr = 42;
+	int a;
+	int b;
+
+	a = 7;
+	b = 2;
+
+	printf("before a = %d, b = %d", a, b);
+	ft_ultimate_div_mod(&a, &b);
+	printf("before a = %d, b = %d", a, b);
+	return (0);
 }

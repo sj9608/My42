@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 22:59:19 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/21 01:26:42 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/21 02:41:18 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/21 03:02:13 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+#include <stdio.h>
+
+void	ft_swap(int *a, int *b);
+
+int main(void)
 {
-	*nbr = 42;
+	int a;
+	int b;
+
+	a = 0;
+	b = 2;
+	printf("before %d ',' %d\n", a, b);
+	ft_swap(&a, &b);
+	printf("after %d ',' %d\n", a, b);
+	return (0);
 }
