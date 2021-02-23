@@ -3,19 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 09:33:59 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/20 09:34:20 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/23 20:47:15 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 20:50:39 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-	char c = 'a';
-	for(c ; c <='z' ; c++)
+	char c;
+
+	c = 'a';
+	while (c <= 'z')
+	{
 		write(1, &c, 1);
+		c++;
+	}
 }

@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/21 02:56:42 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/21 02:59:04 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/23 21:15:27 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 23:39:03 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int temp;
-	
+
 	temp = *a;
-	*a = temp / *b;
-	*b = *a % *b;
+	*a = *a / *b;
+	*b = temp % *b;
 }

@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 09:31:49 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/20 09:33:16 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/23 20:54:42 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 20:56:33 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

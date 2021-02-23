@@ -1,51 +1,48 @@
-/* *********************************************************************** */
-/*                                                                         */
-/*                                                     :::      ::::::::   */
-/*   ft_print_comb2.c                                :+:      :+:    :+:   */
-/*                                                 +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.kr>  +#+  +:+       +#+        */
-/*                                             +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 10:21:21 by seungjle       #+#    #+#             */
-/*   Updated: 2021/02/20 18:06:03 by seungjle      ###   ########.fr       */
-/*                                                                         */
-/* *********************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/23 20:48:04 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 21:06:57 by seungjle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
-void	update(char *buf, int a, int b)
+void	ft_putchar2(char c)
 {
-	write(1, buf, 7);
-	if (buf[b] == '9')
-	{
-		++buf[a];
-		buf[b] = '0';
-	}
-	else
-		++buf[b];
+	write(1, &c, 1);
+}
+
+void	ft_comma(void)
+{
+	ft_putchar2(',');
+	ft_putchar2(' ');
 }
 
 void	ft_print_comb2(void)
 {
-	char buf[7];
+	int a;
+	int b;
 
-	buf[0] = '0';
-	buf[1] = '0';
-	buf[2] = ' ';
-	buf[5] = ',';
-	buf[6] = ' ';
-	while (buf[0] != '9' || buf[1] != '8')
+	a = 0;
+	while (a <= 97)
 	{
-		buf[3] = buf[0];
-		if (buf[1] == '9')
+		b = a + 1;
+		while (b <= 99)
 		{
-			++buf[3];
-			buf[4] = '0';
+			ft_putchar2('0' + a / 10);
+			ft_putchar2('0' + a % 10);
+			ft_putchar2(' ');
+			ft_putchar2('0' + b / 10);
+			ft_putchar2('0' + b % 10);
+			ft_comma();
+			b++;
 		}
-		else
-			buf[4] = buf[1] + 1;
-		while (buf[3] != '9' || buf[4] != '9')
-			update(buf, 3, 4);
-		update(buf, 0, 1);
+		a++;
 	}
 	write(1, "98 99", 5);
 }

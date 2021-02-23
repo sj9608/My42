@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_03.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/21 02:49:16 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/21 02:53:45 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/24 00:51:17 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/24 01:33:23 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod);
-
-int main(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int a;
-	int b;
-	int quota;
-	int remainder;
+	char *temp;
 	
-	a = 7;
-	b = 2;
-	quota = 0;
-	remainder = 0;
-	printf("before a = %d , b = %d , div = %d, mod = %d\n", a, b, quota, remainder);
-	ft_div_mod(a, b, &quota, &remainder);
-	printf("after a = %d , b = %d , div = %d, mod = %d\n", a, b, quota, remainder);
+	temp = dest;
+	while((*dest++ = *src++) != '\0')
+	
+	return temp;
+}
+
+int		main(void)
+{
+	char *s = "hello";
+	char *cp;
+
+	ft_strcpy(cp, s);
+
+	printf("%s", &cp);
+
 	return (0);
 }

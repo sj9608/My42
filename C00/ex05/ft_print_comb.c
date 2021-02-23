@@ -3,40 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 10:06:36 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/20 10:07:08 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/23 20:47:53 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 20:53:22 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_comb(void)
+void	ft_print(char *first, char *second, char *third)
 {
-	char first = '0';
-	char comma = ',';
-	char space = ' ';
+	char comma;
+	char space;
+
+	comma = ',';
+	space = ' ';
+	write(1, first, 1);
+	write(1, second, 1);
+	write(1, third, 1);
+	write(1, &comma, 1);
+	write(1, &space, 1);
+}
+
+void	ft_print_comb(void)
+{
+	char first;
+	char second;
+	char third;
+
+	first = '0';
 	while (first <= '6')
 	{
-		char second = first + 1;
-
+		second = first + 1;
 		while (second <= '8')
 		{
-			char third = second + 1;
-
+			third = second + 1;
 			while (third <= '9')
 			{
-				write(1, &first, 1);
-				write(1, &second, 1);
-				write(1, &third, 1);
+				ft_print(&first, &second, &third);
 				third++;
-				write(1, &comma, 1);
-				write(1, &space, 1);
 			}
 			second++;
 		}
 		first++;
 	}
 	write(1, "789", 3);
-}	
+}

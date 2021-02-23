@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 09:55:00 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/20 09:55:17 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/23 20:47:32 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/23 20:47:33 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
 	char c;
-	for(c = '0' ; c <= '9'; c++)
+
+	c = '0';
+	while (c <= '9')
+	{
 		write(1, &c, 1);
+		c++;
+	}
 }
