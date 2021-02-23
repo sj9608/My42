@@ -14,29 +14,29 @@
 
 void ft_print_comb(void)
 {
-	char i = '0';
+	char first = '0';
 	char comma = ',';
-	char sp = ' ';
-	while (i <= '6')
+	char space = ' ';
+	while (first <= '6')
 	{
-		char j = i + 1;
-		while(j <= '8')
+		char second = first + 1;
+
+		while (second <= '8')
 		{
-			char k = j + 1;
-			while(k <= '9')
+			char third = second + 1;
+
+			while (third <= '9')
 			{
-				write(1, &i, 1);
-				write(1, &j, 1);
-				write(1, &k, 1);
-				k++;
+				write(1, &first, 1);
+				write(1, &second, 1);
+				write(1, &third, 1);
+				third++;
 				write(1, &comma, 1);
-				write(1, &sp, 1);
+				write(1, &space, 1);
 			}
-			j++;
+			second++;
 		}
-		i++;
+		first++;
 	}
 	write(1, "789", 3);
-}
-
-			
+}	

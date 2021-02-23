@@ -6,30 +6,46 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                             +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 10:21:21 by seungjle       #+#    #+#             */
-/*   Updated: 2021/02/20 18:06:03 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:06:03 by seungjle      ###   ########.fr       */
 /*                                                                         */
 /* *********************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	update(char *buf, int a, int b)
 {
-	write(1, &c, 1);
+	write(1, buf, 7);
+	if (buf[b] == '9')
+	{
+		++buf[a];
+		buf[b] = '0';
+	}
+	else
+		++buf[b];
 }
 
-void ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
-	char c[4];
-	c[0] = '0';
-	c[1] = '0';
-	c[2] = ' ';
-	c[3] = ',';
-	while(c[0] <= '9')
-	{
-		while(c[1] <= '8')
-		{
-			write(1, &c[0], 1);
-			write(1, &c[1], 1);
-			write(1, &c[2], 1);
-			
+	char buf[7];
 
+	buf[0] = '0';
+	buf[1] = '0';
+	buf[2] = ' ';
+	buf[5] = ',';
+	buf[6] = ' ';
+	while (buf[0] != '9' || buf[1] != '8')
+	{
+		buf[3] = buf[0];
+		if (buf[1] == '9')
+		{
+			++buf[3];
+			buf[4] = '0';
+		}
+		else
+			buf[4] = buf[1] + 1;
+		while (buf[3] != '9' || buf[4] != '9')
+			update(buf, 3, 4);
+		update(buf, 0, 1);
+	}
+	write(1, "98 99", 5);
+}
