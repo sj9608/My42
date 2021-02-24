@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 14:12:21 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/24 17:39:04 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/24 17:38:20 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/24 19:32:40 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_numeric(char *str)
 {
 	int index;
 
 	index = 0;
-	while (src[index] != '\0')
+	while(str[index] != '\0')
 	{
-		dest[index] = src[index];
+		if (str[index] < '0' || str[index] > '9')
+			return (0);
 		index++;
 	}
-	dest[index] = '\0';
-	return (dest);
+	return (1);
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 14:12:21 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/24 17:39:04 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/24 15:34:08 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/24 17:31:13 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_alpha(char *str)
 {
 	int index;
 
 	index = 0;
-	while (src[index] != '\0')
+	while (str[index] != '\0')
 	{
-		dest[index] = src[index];
+		if (str[index] < 'A' || str[index] > 'Z')
+		{
+			if (str[index] < 'a' || str[index] > 'z')
+				return (0);
+		}
 		index++;
 	}
-	dest[index] = '\0';
-	return (dest);
+	return (1);
 }
