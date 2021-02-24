@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 20:21:37 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/24 20:26:17 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/02/25 01:08:25 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	*ft_str_upcase(char *str)
 	int index;
 
 	index = 0;
-	while(str[index] != '\0')
+	while (str[index] != '\0')
 	{
-		if(str[index] >= 97 && str[index] <= 122)
+		if (str[index] >= 97 && str[index] <= 122)
 			str[index] -= 32;
 		index++;
 	}
-	return str;
+	return (str);
 }
 
 int	main(void)
