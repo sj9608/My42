@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 15:28:17 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/25 15:37:52 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/02/25 17:30:11 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32 || str[i] == 127)
+		if (str[i] >= 32 && str[i] < 127)
 		{
-			hex1 = "0123456789abcdef"[str[i] / 16];
-			hex2 = "0123456789abcdef"[str[i] % 16];
-			write(1, "\\", 1);
-			write(1, &hex1, 1);
-			write(1, &hex2, 1);
+			write(1, &str[i], 1);
 		}
 		else
 		{
-			write(1, &str[i], 1);
+			hex1 = "0123456789abcdef"[((unsigned char)str[i]) / 16];
+			hex2 = "0123456789abcdef"[((unsigned char)str[i]) % 16];
+			write(1, "\\", 1);
+			write(1, &hex1, 1);
+			write(1, &hex2, 1);
 		}
 		i++;
 	}

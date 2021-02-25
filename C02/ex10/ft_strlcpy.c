@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:58:59 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/25 14:37:15 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:36:13 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	src_length_check = ft_strlen(src);
-	if (dest[0] == '\0' || src[0] == '\0')
+	if (dest[0] == '\0' || src == '\0')
 		return (0);
 	while (i < src_length_check && i + 1 < size)
 	{

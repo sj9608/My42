@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -27,9 +28,11 @@ int main(void)
 
 	printf("========= %d =========\n", 1);
 	char dest2[10];
+	char dest3[16];
 	printf("src : %s\n", src);
 	ft_strncpy(dest2, src, 3);
-	printf("dest : %s\n", dest2);
+	ft_strncpy(dest3, src, 5);
+	printf("dest : %s\ndest2 : %s\n", dest2, dest3);
 	printf("\n\n");
 
 	printf("========= %d =========\n", 2);
@@ -130,13 +133,16 @@ int main(void)
 
 	printf("========= %d =========\n", 6);
 
-	char *str_valid;
-	char *str_invalid;
+	char *str_printable;
+	char *str_non_printable;
+	char *str_non_printable2;
 
-	str_valid = "Hell0#";
-	str_invalid = "hello\7F";
-	printf("Hell0# : %d\n", ft_str_is_printable(str_valid));
-	printf("hello\7F : %d\n", ft_str_is_printable(str_invalid));
+	str_printable = "Hell0#";
+	str_non_printable = "hello\7F";
+	str_non_printable2 = "\xff";
+	printf("Hell0# : %d\n", ft_str_is_printable(str_printable));
+	printf("hello\7F : %d\n", ft_str_is_printable(str_non_printable));
+	printf("\\xff : %d\n", ft_str_is_printable(str_non_printable2));
 
 	printf("\n\n");
 
@@ -197,9 +203,14 @@ int main(void)
 	printf("========= %d =========\n", 10);
 	char c10[20] = "c10 strlcpy to c20";
 	char c20[20] = "c20";
-	printf("before\nc10 : %s\nc20 : %s\n", c10, c20);
+	char c30[20] = "";
+	char c40[20];
+	printf("before\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\n", c10, c20, c30, c40);
 	unsigned int ui = ft_strlcpy(c20, c10, 20);
-	printf("after\nc10 : %s\nc20 : %s\nc20 size is : %d", c10, c20, ui);
+	unsigned int ui2 = ft_strlcpy(c30, c10, 15);
+	unsigned int ui3 = strlcpy(c40, c10, 15);
+	printf("after\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\nc20 size is : %d\nc30 size is : %d\nc40 size is : %d\n", c10, c20, c30, c40, ui, ui2, ui3);
+
 	printf("\n\n");
 
 	printf("========= %d =========\n", 11);
