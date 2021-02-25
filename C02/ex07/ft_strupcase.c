@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 20:20:44 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/25 12:28:29 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/25 12:15:28 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/25 15:39:15 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+#include <stdio.h>
+
+char	*ft_strupcase(char *str)
 {
 	int index;
 
 	index = 0;
 	while (str[index] != '\0')
 	{
-		if (str[index] >= 32 && str[index] <= 126)
-			index++;
-		else
-			return (0);
+		if (str[index] >= 'a' && str[index] <= 'z')
+			str[index] = str[index] - 32;
+		index++;
 	}
-	return (1);
+	return (str);
 }

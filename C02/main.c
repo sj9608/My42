@@ -6,6 +6,12 @@ int	ft_str_is_alpha(char *str);
 int	ft_str_is_numeric(char *str);
 int	ft_str_is_lowercase(char *str);
 int	ft_str_is_uppercase(char *str);
+int ft_str_is_printable(char *str);
+char	*ft_strupcase(char *str);
+char	*ft_strlowcase(char *str);
+char	*ft_strcapitalize(char *str);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+void	ft_putstr_non_printable(char *str);
 
 int main(void)
 {
@@ -127,18 +133,83 @@ int main(void)
 	char *str_valid;
 	char *str_invalid;
 
-	str_valid = "Hell0";
+	str_valid = "Hell0#";
 	str_invalid = "hello\7F";
-	printf("should be 1: %d\n", ft_str_is_printable(str_valid));
-	printf("should be 0: %d\n", ft_str_is_printable(str_invalid));
+	printf("Hell0# : %d\n", ft_str_is_printable(str_valid));
+	printf("hello\7F : %d\n", ft_str_is_printable(str_invalid));
 
 	printf("\n\n");
 
 	printf("========= %d =========\n", 7);
+	char toup1[10] = "asdf";
+	char toup2[10] = "aBcD";
+	char toup3[10] = "3f2#";
+	char toup4[10] = "!@#abC";
+
+	printf("before toup1 : %s\n", toup1);
+	ft_strupcase(toup1);
+	printf("after toup1 : %s\n", toup1);
+
+	printf("before toup2 : %s\n", toup2);
+	ft_strupcase(toup2);
+	printf("after toup2 : %s\n", toup2);
+
+	printf("before toup3 : %s\n", toup3);
+	ft_strupcase(toup3);
+	printf("after toup3 : %s\n", toup3);
+
+	printf("before toup4 : %s\n", toup4);
+	ft_strupcase(toup4);
+	printf("after toup4 : %s\n", toup4);
 
 	printf("\n\n");
 
 	printf("========= %d =========\n", 8);
+	char tolo1[10] = "ASDF";
+	char tolo2[10] = "aBcD";
+	char tolo3[10] = "3F2#";
+	char tolo4[10] = "!@#abC";
+
+	printf("before tolo1 : %s\n", tolo1);
+	ft_strlowcase(tolo1);
+	printf("after tolo1 : %s\n", tolo1);
+
+	printf("before tolo2 : %s\n", tolo2);
+	ft_strlowcase(tolo2);
+	printf("after tolo2 : %s\n", tolo2);
+
+	printf("before tolo3 : %s\n", tolo3);
+	ft_strlowcase(tolo3);
+	printf("after tolo3 : %s\n", tolo3);
+
+	printf("before tolo4 : %s\n", tolo4);
+	ft_strlowcase(tolo4);
+	printf("after tolo4 : %s\n", tolo4);
+	printf("\n\n");
+
+	printf("========= %d =========\n", 9);
+	char c[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquate+et+un";
+
+	printf("before \n%s\nafter\n",c);
+	printf("%s\n", ft_strcapitalize(c));
+	printf("\n\n");
+
+	printf("========= %d =========\n", 10);
+	char c10[20] = "c10 strlcpy to c20";
+	char c20[20] = "c20";
+	printf("before\nc10 : %s\nc20 : %s\n", c10, c20);
+	unsigned int ui = ft_strlcpy(c20, c10, 20);
+	printf("after\nc10 : %s\nc20 : %s\nc20 size is : %d", c10, c20, ui);
+	printf("\n\n");
+
+	printf("========= %d =========\n", 11);
+	char nonP[25] = "Coucou\ntu vas bien ?";
+	printf("before nonP\n%s\nafter\n", nonP);
+	ft_putstr_non_printable(nonP);
+
+	printf("\n\n");
+
+	printf("========= %d =========\n", 12);
 
 	printf("\n\n");
 	return (0);
