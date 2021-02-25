@@ -207,16 +207,14 @@ int main(void)
 	printf("\n\n");
 
 	printf("========= %d =========\n", 10);
-	char c10[20] = "c10 strlcpy to c20";
-	char c20[20] = "c20";
-	char c30[20] = "";
-	char c40[20];
-	printf("before\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\n", c10, c20, c30, c40);
-	unsigned int ui = ft_strlcpy(c20, c10, 20);
-	unsigned int ui2 = ft_strlcpy(c30, c10, 16);
-	unsigned int ui3 = strlcpy(c40, c10, 17);
-	printf("after\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\nc20 size is : %d\nc30 size is : %d\nc40 size is : %d\n", c10, c20, c30, c40, ui, ui2, ui3);
+	char c00[15] = "hello, world";
+	char c01[15];
+	char c02[15];
 
+	printf("%s\n", c00);
+	printf("c01 : %lu\n", strlcpy(c01, c00, 5));
+	printf("c02 : %u\n", ft_strlcpy(c02, c00, 5));
+	printf("c01 : %s\nc02 : %s\n", c01, c02);
 	printf("\n\n");
 
 	printf("========= %d =========\n", 11);
