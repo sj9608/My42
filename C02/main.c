@@ -27,12 +27,15 @@ int main(void)
 	printf("\n\n");
 
 	printf("========= %d =========\n", 1);
-	char dest2[10];
-	char dest3[16];
+	char dest2[6] = "abcde";
+	char dest3[64] = "efghaskdfkjasdjfalksdjrlasjdrlkj";
+	char dest4[6];
 	printf("src : %s\n", src);
-	ft_strncpy(dest2, src, 3);
-	ft_strncpy(dest3, src, 5);
-	printf("dest : %s\ndest2 : %s\n", dest2, dest3);
+	ft_strncpy(dest2, src, 4);
+	ft_strncpy(dest3, src, 4);
+	strncpy(dest4, src, 4);
+	printf("dest2[10] : %s\ndest3[16] : %s\n", dest2, dest3);
+	printf("dest4[16] : %s", dest4);
 	printf("\n\n");
 
 	printf("========= %d =========\n", 2);
@@ -195,9 +198,12 @@ int main(void)
 
 	printf("========= %d =========\n", 9);
 	char c[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquate+et+un";
+	char c2[100] = "sAlut, comment tu vas ? 42MOts quarAnte-deUx; ciNquate+eT+un";
 
 	printf("before \n%s\nafter\n",c);
-	printf("%s\n", ft_strcapitalize(c));
+	printf("%s\n\n", ft_strcapitalize(c));
+	printf("before \n%s\nafter\n", c2);
+	printf("%s\n", ft_strcapitalize(c2));
 	printf("\n\n");
 
 	printf("========= %d =========\n", 10);
@@ -207,8 +213,8 @@ int main(void)
 	char c40[20];
 	printf("before\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\n", c10, c20, c30, c40);
 	unsigned int ui = ft_strlcpy(c20, c10, 20);
-	unsigned int ui2 = ft_strlcpy(c30, c10, 15);
-	unsigned int ui3 = strlcpy(c40, c10, 15);
+	unsigned int ui2 = ft_strlcpy(c30, c10, 16);
+	unsigned int ui3 = strlcpy(c40, c10, 17);
 	printf("after\nc10 : %s\nc20 : %s\nc30 : %s\nc40 : %s\nc20 size is : %d\nc30 size is : %d\nc40 size is : %d\n", c10, c20, c30, c40, ui, ui2, ui3);
 
 	printf("\n\n");

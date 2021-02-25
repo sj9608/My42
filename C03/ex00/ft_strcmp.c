@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 14:59:31 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/26 00:06:28 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/25 21:24:47 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/25 21:30:07 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strlen1(char *str)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (i);
 }
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	
