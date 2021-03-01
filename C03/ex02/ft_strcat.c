@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 21:24:47 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 15:31:34 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/27 17:57:58 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/28 15:30:40 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
-	while (*s1 && *s2)
+	while (*dest)
+		++dest;
+	while (*src)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		++s1;
-		++s2;
+		*dest = (unsigned char)*src;
+		++dest;
+		++src;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	*dest = 0;
+	return (dest);
 }

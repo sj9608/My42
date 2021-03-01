@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 21:24:47 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 15:31:34 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/28 00:46:04 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/28 13:28:59 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	while (*s1 && *s2)
+	while(*str)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		++s1;
-		++s2;
+		write(1, str, 1);
+		++str;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

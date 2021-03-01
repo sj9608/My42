@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 21:24:47 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 15:31:34 by seungjle         ###   ########.fr       */
+/*   Created: 2021/02/28 17:12:03 by seungjle          #+#    #+#             */
+/*   Updated: 2021/02/28 17:12:04 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_check_invalid(char *base)
 {
-	while (*s1 && *s2)
+	while (*base)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		++s1;
-		++s2;
+		if (*base < 32 || *base > 127)
+		{
+			return (0);
+		}
+		base++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (1);
 }
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	char ch;
