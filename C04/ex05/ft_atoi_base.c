@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 17:12:03 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 15:04:23 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/02 15:17:02 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/02 17:05:26 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		ft_strlen(char *base)
+int		ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	while (base[i] != '\0')
-	{
+	while (str[i] != '\0')
 		++i;
-	}
 	return (i);
 }
 
@@ -34,7 +30,7 @@ int		is_base_valid(char *base)
 		return (0);
 	while (base[index] != '\0')
 	{
-		if (base[index] == '+' || base[index] == '-')
+		if (base[index] == '+' || base[index] == '-' || base[index] == ' ')
 			return (0);
 		chk_index = index + 1;
 		while (base[chk_index] != '\0')
@@ -48,39 +44,53 @@ int		is_base_valid(char *base)
 	return (1);
 }
 
-void	ft_putnbr(int nbr, char *base, int base_num)
+int		ft_check_strnum(char str, char *base)
 {
-	int		i;
+	int index;
 
-	i = 0;
-	base_num = ft_strlen(base);
-	if (nbr < 0)
+	index = 0;
+	while (base[index] != '\0')
 	{
-		write(1, "-", 1);
-		nbr = nbr * -1;
+		if (str == base[index])
+			return index;
+		index++;
 	}
-	if (nbr >= base_num)
-		ft_putnbr(nbr / base_num, base, base_num);
-	write(1, &base[nbr % base_num], 1);
+	return (0);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int		ft_atoi_base(char *str, char *base)
 {
+	int i;
+	int sign;
+	int result;
 	int base_len;
 
+	i = 0;
+	sign = 1;
+	result = 0;
 	base_len = ft_strlen(base);
-	ft_putnbr(nbr, base, base_len);
+	if (!is_base_valid(base))
+		return (0);
+	while (*str == '+' || *str == '-' || *str == ' ')
+	{
+		if (*str == '-')
+			sign *= -1;
+		++str;
+	}
+	while (str[i] != '\0' && ft_check_strnum(str[i], base))
+	{
+		result *= base_len;
+		result += sign * (ft_check_strnum(str[i], base));
+		i++;
+	}
+	return (result);
 }
+
+#include <stdio.h>
 
 int		main(void)
 {
-	ft_putnbr_base(-8, "01");
-	write(1, "\n", 1);
-	ft_putnbr_base(-17, "0123456789ABCDEF");
-	write(1, "\n", 1);
-	ft_putnbr_base(-23, "0123456789");
-	write(1, "\n", 1);
-	ft_putnbr_base(-7, "poneyvif");
-
+	int i = ft_atoi_base("sdlkfakldsf", "0123456789abcdef");
+	printf("%d",i);
 	return (0);
 }
