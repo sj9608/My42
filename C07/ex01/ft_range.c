@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 15:05:26 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/04 13:49:05 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/04 14:16:11 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/04 14:16:12 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int		main(int argc, char *argv[])
+int		*ft_range(int min, int max)
 {
+	int *result;
 	int index;
+	int size;
 
-	index = 1;
-	while (index < argc)
+	index = 0;
+	size = max - min;
+	if (min > max)
+		return (0);
+	result = malloc(sizeof(int) * size);
+	while (index < size)
 	{
-		while (*argv[index])
-		{
-			write(1, argv[index]++, 1);
-		}
-		write(1, "\n", 1);
+		result[index] = size - 1 + index;
 		++index;
+	}
+	result[index] = '\0';
+	return (result);
+}
+
+#include <stdio.h>
+
+int		main(void)
+{
+	int *test;
+
+	test = ft_range(3, 7);
+	while (*test)
+	{
+		printf("%d ", *test);
+		++test;
 	}
 	return (0);
 }

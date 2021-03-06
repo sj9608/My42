@@ -1,30 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 15:05:26 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/04 13:49:05 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/04 15:12:53 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/04 15:12:54 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int		main(int argc, char *argv[])
+int		ft_strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		++i;
+	}
+	return (i);
+}
+
+int		ft_strslen(int size, char **str, char *sep)
 {
 	int index;
-
-	index = 1;
-	while (index < argc)
+	int j;
+	int len;
+	
+	len = 0;
+	j = 0;
+	while (str[j] != '\0')
 	{
-		while (*argv[index])
+		index = 0;
+		while (*str[index] != '\0')
 		{
-			write(1, argv[index]++, 1);
+			++index;
+			++len;
 		}
-		write(1, "\n", 1);
-		++index;
+		++j;
+		++len;
 	}
-	return (0);
+	return (len);
 }
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char *result;
+
+	
