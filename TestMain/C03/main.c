@@ -71,10 +71,26 @@ int main(void)
 
 	printf("========= %d =========\n", 4);
 
+	char c[50] = "12345678";
+	char c2[50] = "23";
+
+	printf("%s\n", strstr(c, c2));
+	printf("%s\n", ft_strstr(c, c2));
 	printf("\n\n");
 
 	printf("========= %d =========\n", 5);
 
+	char st1[15] = "world!";
+	char st2[30] = "hello ";
+	char st3[15] = "world!";
+	char st4[30] = "hello ";
+	unsigned int st = 0;
+	unsigned int ft = 0;
+
+	st = strlcat(st2, st1, 0);
+	ft = ft_strlcat(st4, st3, 0);
+	printf("%s, %d\n", st2, st);
+	printf("%s, %d\n", st4, ft);
 	printf("\n\n");
 	return (0);
 }
