@@ -55,6 +55,18 @@ int main(void)
 
 	printf("========= %d =========\n", 3);
 
+	char c001[100] = "hello";
+	char c002[100] = " world";
+	char c003[100] = "";
+	char c004[100];
+
+	printf("c001 : %s\n", c001);
+	printf("c002 : %s\n", c002);
+	printf("c003 : %s\n", c003);
+	ft_strncat(c003, c001, 4);
+	strncat(c004, c001, 4);
+	printf("ft_strcat(c003, c001) = %s\n", c003);
+	printf("strcat(c001, c002) = %s\n", c004);
 	printf("\n\n");
 
 	printf("========= %d =========\n", 4);

@@ -19,17 +19,23 @@ int main(void)
 	printf("========= %d =========\n", 0);
 	char *src;
 	char dest[10];
+	char ddest[10] = "eeeeeeee";
+	char dddest[10] = "eeeeeee";
 
 	src = "Hello";
 	printf("src : %s\n", src);
 	ft_strcpy(dest, src);
+	ft_strcpy(ddest, src);
+	strcpy(dddest, src);
+	printf("ddest : %s\n", ddest);
+	printf("dddest : %s\n", dddest);
 	printf("dest : %s\n", dest);
 	printf("\n\n");
 
 	printf("========= %d =========\n", 1);
 	char dest2[6] = "abcde";
 	char dest3[64] = "efghaskdfkjasdjfalksdjrlasjdrlkj";
-	char dest4[6];
+	char dest4[64] = "efghaskdfkjasdjfalksdjrlasjdrlkj";
 	printf("src : %s\n", src);
 	ft_strncpy(dest2, src, 4);
 	ft_strncpy(dest3, src, 4);
