@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 15:45:57 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 16:53:29 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/08 15:28:27 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/08 16:23:54 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		is_space(char c)
 {
@@ -27,32 +25,31 @@ int		is_digit(char c)
 	return (0);
 }
 
-int		ft_atoi(char *str)
+int		ft_atoi2(char *str)
 {
 	int result;
 	int sign;
 
 	result = 0;
 	sign = 1;
-	while (is_space(*str))
-		++str;
-	while (*str == '-')
+	while (*str)
 	{
-		sign *= -1;
-		++str;
+		if (is_space(*str))
+			++str;
+		else if (*str == '-')
+		{
+			sign *= -1;
+			++str;
+		}
+		else if (is_digit(*str))
+		{
+			result = (result * 10) + (*str - '0');
+			++str;
+			if (!is_digit(*str))
+				return (sign * result);
+		}
+		else
+			++str;
 	}
-	while (is_digit(*str))
-	{
-		result *= 10;
-		result += sign * (*str - '0');
-		++str;
-	}
-	return (result);
-}
-
-int		main(void)
-{
-	char *str = "ab  ---+--+1234ab567-";
-	printf("%d", ft_atoi(str));
 	return (0);
 }

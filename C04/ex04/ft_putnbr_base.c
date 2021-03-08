@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 17:12:03 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 15:04:23 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:25:26 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ void	ft_putnbr(int nbr, char *base, int base_num)
 	int		i;
 
 	i = 0;
-	base_num = ft_strlen(base);
-	if (nbr < 0)
+	if (nbr == -2147483648)
+	{
+		ft_putnbr(nbr / base_num, base, base_num);
+		write(1, &base[(nbr % base_num) * -1], 1);
+	}
+	else if (nbr < 0)
 	{
 		write(1, "-", 1);
 		nbr = nbr * -1;
@@ -67,13 +71,16 @@ void	ft_putnbr(int nbr, char *base, int base_num)
 void	ft_putnbr_base(int nbr, char *base)
 {
 	int base_len;
-
+	if (!is_base_valid(base))
+		return ;
 	base_len = ft_strlen(base);
 	ft_putnbr(nbr, base, base_len);
 }
 
 int		main(void)
 {
+	ft_putnbr_base(-2147483648, "0123456789");
+	write(1, "\n", 1);
 	ft_putnbr_base(-8, "01");
 	write(1, "\n", 1);
 	ft_putnbr_base(-17, "0123456789ABCDEF");
