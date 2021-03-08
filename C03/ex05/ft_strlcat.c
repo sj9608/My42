@@ -26,7 +26,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	src_len;
 	unsigned int	dest_len;
-	int	i;
+	int				i;
 
 	i = 0;
 	src_len = ft_strlen(src);

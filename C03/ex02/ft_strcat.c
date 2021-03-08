@@ -16,7 +16,7 @@ char	*ft_strcat(char *dest, char *src)
 		++dest;
 	while (*src)
 	{
-		*dest = (unsigned char)*src;
+		*dest = *src;
 		++dest;
 		++src;
 	}
