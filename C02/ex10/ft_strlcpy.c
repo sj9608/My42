@@ -6,13 +6,13 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:58:59 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/09 17:08:09 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:13:23 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen2(char *str)
+unsigned int		ft_strlen2(char *str)
 {
-	int			i;
+	int				i;
 
 	i = 0;
 	while (str[i] != '\0')
