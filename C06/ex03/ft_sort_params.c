@@ -6,13 +6,13 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 15:50:32 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/03 15:50:32 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:31:19 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_strcmp(char *str1, char *str2)
+int			ft_strcmp(char *str1, char *str2)
 {
 	while (*str1 && *str2)
 	{
@@ -24,11 +24,11 @@ int		ft_strcmp(char *str1, char *str2)
 	return ((unsigned int)*str1 - (unsigned int)*str2);
 }
 
-void	ft_sort(int argc, char *argv[])
+void		ft_sort(int argc, char *argv[])
 {
-	int i;
-	int j;
-	char *temp;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 0;
 	while (i < argc)
@@ -38,7 +38,7 @@ void	ft_sort(int argc, char *argv[])
 		{
 			if (ft_strcmp(argv[j - 1], argv[j]) > 0)
 			{
-				temp = argv[j -1];
+				temp = argv[j - 1];
 				argv[j - 1] = argv[j];
 				argv[j] = temp;
 			}
@@ -48,9 +48,9 @@ void	ft_sort(int argc, char *argv[])
 	}
 }
 
-int		main(int argc, char *argv[])
+int			main(int argc, char *argv[])
 {
-	int i;
+	int		i;
 
 	i = 1;
 	ft_sort(argc, argv);

@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 15:20:11 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/03 15:20:14 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:29:57 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ int		main(int argc, char *argv[])
 	}
 	return (0);
 }
-
-

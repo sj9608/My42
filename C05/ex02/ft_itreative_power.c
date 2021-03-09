@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 18:29:39 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 18:29:39 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:27:25 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,4 @@ int		ft_iterative_power(int nb, int power)
 		--power;
 	}
 	return (result);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	printf("%d", ft_iterative_power(2, 4));
-	return (0);
 }

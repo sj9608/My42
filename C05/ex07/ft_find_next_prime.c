@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:23:33 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 23:23:35 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:29:33 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,4 @@ int		ft_find_next_prime(int nb)
 		i++;
 	}
 	return (nb);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	printf("%d", ft_find_next_prime(0));
-	return (0);
 }

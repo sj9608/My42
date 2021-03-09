@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:00:38 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 23:00:39 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:29:17 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,4 @@ int		ft_is_prime(int nb)
 		++i;
 	}
 	return (1);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	printf("%d", ft_is_prime(31));
-	return (0);
 }
