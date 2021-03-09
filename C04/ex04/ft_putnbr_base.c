@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 17:12:03 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/08 19:25:26 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 02:47:17 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_strlen(char *base)
+int			ft_strlen2(char *base)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (base[i] != '\0')
@@ -24,13 +24,13 @@ int		ft_strlen(char *base)
 	return (i);
 }
 
-int		is_base_valid(char *base)
+int			is_base_valid(char *base)
 {
-	int index;
-	int chk_index;
+	int		index;
+	int		chk_index;
 
 	index = 0;
-	if (*base == '\0' || ft_strlen(base) < 2)
+	if (*base == '\0' || ft_strlen2(base) < 2)
 		return (0);
 	while (base[index] != '\0')
 	{
@@ -48,14 +48,14 @@ int		is_base_valid(char *base)
 	return (1);
 }
 
-void	ft_putnbr(int nbr, char *base, int base_num)
+void		ft_putnbr1(int nbr, char *base, int base_num)
 {
 	int		i;
 
 	i = 0;
 	if (nbr == -2147483648)
 	{
-		ft_putnbr(nbr / base_num, base, base_num);
+		ft_putnbr1(nbr / base_num, base, base_num);
 		write(1, &base[(nbr % base_num) * -1], 1);
 	}
 	else if (nbr < 0)
@@ -64,30 +64,16 @@ void	ft_putnbr(int nbr, char *base, int base_num)
 		nbr = nbr * -1;
 	}
 	if (nbr >= base_num)
-		ft_putnbr(nbr / base_num, base, base_num);
+		ft_putnbr1(nbr / base_num, base, base_num);
 	write(1, &base[nbr % base_num], 1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void		ft_putnbr_base(int nbr, char *base)
 {
-	int base_len;
+	int		base_len;
+
 	if (!is_base_valid(base))
 		return ;
-	base_len = ft_strlen(base);
-	ft_putnbr(nbr, base, base_len);
-}
-
-int		main(void)
-{
-	ft_putnbr_base(-2147483648, "0123456789");
-	write(1, "\n", 1);
-	ft_putnbr_base(-8, "01");
-	write(1, "\n", 1);
-	ft_putnbr_base(-17, "0123456789ABCDEF");
-	write(1, "\n", 1);
-	ft_putnbr_base(-23, "0123456789");
-	write(1, "\n", 1);
-	ft_putnbr_base(-7, "poneyvif");
-
-	return (0);
+	base_len = ft_strlen2(base);
+	ft_putnbr1(nbr, base, base_len);
 }

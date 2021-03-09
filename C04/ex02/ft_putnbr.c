@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 22:26:13 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 13:29:06 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 01:50:19 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,4 @@ void	ft_putnbr(int nb)
 		ch = '0' + nb % 10;
 	}
 	ft_putchar(ch);
-}
-
-int		main(void)
-{
-	ft_putnbr(213);
-	ft_putchar('\n');
-	ft_putnbr(-2147483648);
-	ft_putchar('\n');
-	ft_putnbr(2147483647);
-	return (0);
 }

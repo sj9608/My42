@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 00:43:10 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 13:28:53 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 02:02:01 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		ft_strlen(char *str)
 	while (*str)
 	{
 		++result;
+		++str;
 	}
 	return (result);
 }

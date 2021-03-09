@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 15:45:57 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 16:53:29 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 02:03:26 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		is_space(char c)
 {
@@ -36,7 +34,7 @@ int		ft_atoi(char *str)
 	sign = 1;
 	while (is_space(*str))
 		++str;
-	while (*str == '-')
+	while (*str == '+' || *str == '-')
 	{
 		sign *= -1;
 		++str;
@@ -48,11 +46,4 @@ int		ft_atoi(char *str)
 		++str;
 	}
 	return (result);
-}
-
-int		main(void)
-{
-	char *str = "ab  ---+--+1234ab567-";
-	printf("%d", ft_atoi(str));
-	return (0);
 }
