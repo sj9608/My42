@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 19:57:19 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/24 20:20:35 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:51:15 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int index;
 
