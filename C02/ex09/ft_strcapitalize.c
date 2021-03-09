@@ -6,13 +6,13 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:27:31 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/26 00:18:23 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:11:11 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_check_to_up(char *str, int i)
 {
-	if (str[i] >= ' ' && str[i] <= '/')
+	if ((str[i] >= ' ' && str[i] <= '/') || (str[i] >= 9 && str[i] <= 13))
 	{
 		if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 			str[i + 1] -= 32;
