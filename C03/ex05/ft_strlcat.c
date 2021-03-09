@@ -6,13 +6,13 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 22:34:09 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/08 02:16:16 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:00:39 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+unsigned int		ft_strlen(char *str)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	len = 0;
 	while (str[len])
@@ -22,7 +22,7 @@ unsigned int	ft_strlen(char *str)
 	return (len);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	src_len;
 	unsigned int	dest_len;
