@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:32:27 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/04 14:32:34 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 15:01:28 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int		ft_ultimate_range(int **range, int min, int max)
 
 	index = 0;
 	size = max - min;
-	if (min >= max)
+	if(!(temp = malloc(sizeof(int) * size)))
+		return (-1);
+	else if (min >= max)
 		return (0);
-	temp = malloc(sizeof(int) * size);
 	*range = temp;
 	while (index < size)
 	{
