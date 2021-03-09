@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 17:25:54 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/08 00:57:07 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 20:19:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	if (n == 0)
 		return (0);
-	while (*s1 && *s2 && n > 0)
+	while ((*s1 || *s2) && n > 0)
 	{
 		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
+			return (*s1 - *s2);
 		++s1;
 		++s2;
 		--n;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (0);
 }

@@ -6,20 +6,24 @@
 /*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 17:57:58 by seungjle          #+#    #+#             */
-/*   Updated: 2021/02/28 15:30:40 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/09 20:24:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	while (*dest)
-		++dest;
-	while (*src)
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		++i;
+	while (src[j] != '\0')
 	{
-		*dest = *src;
-		++dest;
-		++src;
+		dest[i + j] = src[j];
+		++j;
 	}
-	*dest = 0;
+	dest[i + j] = '\0';
 	return (dest);
 }

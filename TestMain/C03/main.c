@@ -1,96 +1,173 @@
 #include <stdio.h>
 #include <string.h>
 
-int 	ft_strcmp(char *s1, char *s2);
-
-
+int ft_strcmp(char *s1, char *s2);
+int ft_strncmp(char *s1, char *s2, unsigned int n);
+char *ft_strcat(char *dest, char *src);
+char *ft_strncat(char *dest, char *src, unsigned int nb);
+char *ft_strstr(char *str, char *to_find);
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
 
 int main(void)
 {
-	printf("========= %d =========\n", 0);
+    char *str1;
+    char *str2;
+    char *str3;
+    char *str4;
+    char *str5;
+    char *str6;
+    char *str7;
+    char *str8;
+    char *str9;
+    char *str10;
+    char *str11;
+    char    *str_base;
+    char    dest[100];
+    char    dest2[100];
+    char    *src;
+    int        index;
+    char *haystack;
+    char *needle;
+    char *result_c;
+    char *result_ft;
 
-	char s01[] = "hello";
-	char s02[] = "hello";
-	char s03[] = "h\xa0llo";
-	char s04[] = "";
+    printf("= %d =========\n", 0);
+    str1 = "Hello";
+    str2 = "apple";
+    str3 = "";
+    str4 = "ABCD";
+    str5 = "abcdEghe";
+    str6 = "Hello World!";
+    str7 = "HelLO wOrLd!";
+    str8 = "hELlo WoRld!";
+    str9 = "z";
+    str10 = "Hello";
+    str11 = "Hello ";
 
-	printf("strcmp s01 = s02 ? : %d\n", strcmp(s01, s02));
-	printf("ft_strcmp s01 = s02 ? : %d\n", ft_strcmp(s01, s02));
-	printf("strcmp s01 = s03 ? : %d\n", strcmp(s01, s03));
-	printf("ft_strcmp s01 = s03 ? : %d\n", ft_strcmp(s01, s03));
-	printf("strcmp s01 = s04 ? : %d\n", strcmp(s01, s04));
-	printf("ft_strcmp s01 = s04 ? : %d\n", ft_strcmp(s01, s04));
-	printf("\n\n");
+    printf("c  : %d\n", strcmp(str1, str2));
+    printf("ft : %d\n", ft_strcmp(str1, str2));
+    printf("c  : %d\n", strcmp(str3, str4));
+    printf("ft : %d\n", ft_strcmp(str3, str4));
+    printf("c  : %d\n", strcmp(str4, str5));
+    printf("ft : %d\n", ft_strcmp(str4, str5));
+    printf("c  : %d\n", strcmp(str4, str9));
+    printf("ft : %d\n", ft_strcmp(str4, str9));
+    printf("c  : %d\n", strcmp(str4, str5));
+    printf("ft : %d\n", ft_strcmp(str4, str5));
+    printf("c  : %d\n", strcmp(str6, str7));
+    printf("ft : %d\n", ft_strcmp(str6, str7));
+    printf("c  : %d\n", strcmp(str6, str8));
+    printf("ft : %d\n", ft_strcmp(str6, str8));
+    printf("c  : %d\n", strcmp(str10, str11));
+    printf("ft : %d\n", ft_strcmp(str10, str11));
+    printf("\n\n");
 
-	printf("========= %d =========\n", 1);
+    printf("= %d =========\n", 1);
+    printf("c  : %d\n", strncmp(str1, str2, 0));
+    printf("ft : %d\n", ft_strncmp(str1, str2, 0));
+    printf("c  : %d\n", strncmp(str3, str4, 1));
+    printf("ft : %d\n", ft_strncmp(str3, str4, 1));
+    printf("c  : %d\n", strncmp(str4, str5, 2));
+    printf("ft : %d\n", ft_strncmp(str4, str5, 2));
+    printf("c  : %d\n", strncmp(str4, str9, 3));
+    printf("ft : %d\n", ft_strncmp(str4, str9, 3));
+    printf("c  : %d\n", strncmp(str4, str5, 4));
+    printf("ft : %d\n", ft_strncmp(str4, str5, 4));
+    printf("c  : %d\n", strncmp(str6, str7, 5));
+    printf("ft : %d\n", ft_strncmp(str6, str7, 5));
+    printf("c  : %d\n", strncmp(str6, str8, 6));
+    printf("ft : %d\n", ft_strncmp(str6, str8, 6));
+    printf("c  : %d\n", strncmp(str10, str11, 5));
+    printf("ft : %d\n", ft_strncmp(str10, str11, 5));
+    printf("c  : %d\n", strncmp(str10, str11, 6));
+    printf("ft : %d\n", ft_strncmp(str10, str11, 6));
 
-	char ss01[] = "h\x58llo";
-	char ss02[] = "h\x58lloa";
-	char ss03[] = "h\x5allo";
-	char ss04[] = "";
+    printf("\n\n");
 
-	printf("strncmp ss01 = ss02 ? : %d\n", strncmp(ss01, ss02, 6));
-	printf("ft_strncmp ss01 = ss02 ? : %d\n", ft_strncmp(ss01, ss02, 6));
-	printf("strncmp ss01 = ss03 ? : %d\n", strncmp(ss01, ss03, 3));
-	printf("ft_strncmp ss01 = ss03 ? : %d\n", ft_strncmp(ss01, ss03, 3));
-	printf("strncmp ss01 = ss04 ? : %d\n", strncmp(ss01, ss04,0));
-	printf("ft_strncmp ss01 = ss04 ? : %d\n", ft_strncmp(ss01, ss04,0));
-	printf("\n\n");
+    printf("= %d =========\n", 2);
+    str_base = "Hello";
+    src = " World";
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : %s$\n", strcat(dest, src));
+    printf("ft : %s$\n", ft_strcat(dest2, src));
 
-	printf("========= %d =========\n", 2);
+    printf("\n\n");
 
-	char sss01[20] = "hello";
-	char sss02[20] = "world";
-	char sss03[20] = "";
+    printf("= %d =========\n", 3);
+    str_base = "Hello";
+    src = " World";
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : %s$\n", strncat(dest, src, 4));
+    printf("ft : %s$\n", ft_strncat(dest2, src, 4));
 
-	printf("sss01 : %s\n", sss01);
-	printf("sss02 : %s\n", sss02);
-	printf("sss03 : %s\n", sss03);
-	ft_strcat(sss03, sss01);
-	strcat(sss01, sss02);
-	printf("ft_strcat(sss03, sss01) = %s\n", sss03);
-	printf("strcat(sss01, sss02) = %s\n", sss01);
+    printf("\n\n");
 
-	printf("\n\n");
+    printf("= %d =========\n", 4);
+    haystack = "Foo Bar Baz";
+    needle = "Bar";
+    result_c = strstr(haystack, needle);
+    result_ft = ft_strstr(haystack, needle);
+    printf("%p / %p\n", result_c, result_ft);
+    printf("c  : %s$\n", result_c);
+    printf("ft : %s$\n", result_ft);
 
-	printf("========= %d =========\n", 3);
+    printf("\n\n");
 
-	char c001[100] = "hello";
-	char c002[100] = " world";
-	char c003[100] = "";
-	char c004[100];
+    printf("= %d =========\n", 5);
+    str_base = "hello";
+    src = " good morning";
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : (%lu) $%s$\n", strlcat(dest, src, 0), dest);
+    printf("ft : (%d) $%s$\n", ft_strlcat(dest2, src, 0), dest2);
 
-	printf("c001 : %s\n", c001);
-	printf("c002 : %s\n", c002);
-	printf("c003 : %s\n", c003);
-	ft_strncat(c003, c001, 4);
-	strncat(c004, c001, 4);
-	printf("ft_strcat(c003, c001) = %s\n", c003);
-	printf("strcat(c001, c002) = %s\n", c004);
-	printf("\n\n");
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : (%lu) $%s$\n", strlcat(dest, src, 5), dest);
+    printf("ft : (%d) $%s$\n", ft_strlcat(dest2, src, 5), dest2);
 
-	printf("========= %d =========\n", 4);
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : (%lu) $%s$\n", strlcat(dest, src, 7), dest);
+    printf("ft : (%d) $%s$\n", ft_strlcat(dest2, src, 7), dest2);
 
-	char c[50] = "12345678";
-	char c2[50] = "23";
+    index = 0;
+    while (index < 6)
+    {
+        dest[index] = str_base[index];
+        dest2[index] = str_base[index];
+        index++;
+    }
+    printf("c  : (%lu) $%s$\n", strlcat(dest, src, 100), dest);
+    printf("ft : (%d) $%s$\n", ft_strlcat(dest2, src, 100), dest2);
 
-	printf("%s\n", strstr(c, c2));
-	printf("%s\n", ft_strstr(c, c2));
-	printf("\n\n");
-
-	printf("========= %d =========\n", 5);
-
-	char st1[15] = "world!";
-	char st2[30] = "hello ";
-	char st3[15] = "world!";
-	char st4[30] = "hello ";
-	unsigned int st = 0;
-	unsigned int ft = 0;
-
-	st = strlcat(st2, st1, 0);
-	ft = ft_strlcat(st4, st3, 0);
-	printf("%s, %d\n", st2, st);
-	printf("%s, %d\n", st4, ft);
-	printf("\n\n");
-	return (0);
+    printf("\n\n");
+    return (0);
 }
