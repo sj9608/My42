@@ -53,7 +53,7 @@ int main(void)
 
 	printf("= %d =========\n", 3);
 
-	str = " ---+--+1234ab567";
+	str = " 	---+--+1234ab567";
 	printf("%d\n", ft_atoi(str));
 
     printf("\n\n");
