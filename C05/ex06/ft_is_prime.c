@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:00:38 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/09 23:29:17 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:42:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_is_prime(int nb)
 {
-	int chk;
-	int i;
+	unsigned int	i;
 
 	i = 2;
-	chk = nb / 2;
-	while (i < chk)
+	if (nb < 2)
+		return (0);
+	while (i * i <= (unsigned int)nb)
 	{
-		if (nb % i == 0)
+		if ((unsigned int)nb % i == 0)
 			return (0);
 		++i;
 	}
