@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 22:34:09 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/09 17:00:39 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:39:26 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
 	i = 0;
 	src_len = ft_strlen(src);
 	dest_len = ft_strlen(dest);
-	while (src[i] && i < (int)(size - dest_len - 1))
+	while (src[i] && i + dest_len + 1 < size)
 	{
 		dest[dest_len + i] = src[i];
 		++i;
