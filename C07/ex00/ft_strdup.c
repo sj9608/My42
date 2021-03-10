@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:16:04 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/04 14:16:05 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:59:11 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(char *src)
 	{
 		++index;
 	}
-	temp = malloc(sizeof(char) * index);
+	temp = malloc(sizeof(char) * index + 1);
 	index = 0;
 	while (src[index] != '\0')
 	{
