@@ -6,9 +6,17 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:17:02 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/10 01:53:46 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/11 10:19:37 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int		is_space1(char c)
+{
+	if (c == '\t' || c == '\n' || c == '\v' ||
+			c == '\f' || c == '\r' || c == ' ')
+		return (1);
+	return (0);
+}
 
 int		ft_strlen3(char *str)
 {
@@ -30,7 +38,7 @@ int		is_base_valid2(char *base)
 		return (0);
 	while (base[index] != '\0')
 	{
-		if (base[index] == '+' || base[index] == '-' || base[index] == ' ')
+		if (base[index] == '+' || base[index] == '-' || is_space1(base[index]))
 			return (0);
 		chk_index = index + 1;
 		while (base[chk_index] != '\0')
@@ -71,7 +79,7 @@ int		ft_atoi_base(char *str, char *base)
 	base_len = ft_strlen3(base);
 	if (!is_base_valid2(base))
 		return (0);
-	while (*str == '+' || *str == '-' || *str == ' ')
+	while (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign *= -1;

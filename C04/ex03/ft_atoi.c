@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 15:45:57 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/10 02:03:26 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/11 10:17:09 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int		ft_atoi(char *str)
 		++str;
 	while (*str == '+' || *str == '-')
 	{
-		sign *= -1;
+		if (*str == '-')
+			sign *= -1;
 		++str;
 	}
 	while (is_digit(*str))
