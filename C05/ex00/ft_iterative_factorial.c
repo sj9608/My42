@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 15:28:03 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/02 18:13:42 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/10 22:36:58 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_iterative_factorial(int nb)
 {
@@ -27,13 +25,4 @@ int		ft_iterative_factorial(int nb)
 		--nb;
 	}
 	return (result);
-}
-
-int		main(void)
-{
-	int nb;
-
-	nb = 5;
-	printf("%d\n", ft_iterative_factorial(nb));
-	return (0);
 }
