@@ -123,6 +123,7 @@ int main(void)
 	// 		count++;
 	// }
 	printf("is_prime(%d) = %d\n", INT_MAX, is_prime(INT_MAX));
+	printf("is_prime(%d) = %d\n", 2, is_prime(2));
 	// printf("first 50'000 number, %d prime\n", count);
 
     printf("\n\n");
