@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:17:02 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/11 10:19:37 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/12 01:01:23 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,10 @@ int		ft_atoi_base(char *str, char *base)
 	base_len = ft_strlen3(base);
 	if (!is_base_valid2(base))
 		return (0);
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign *= -1;
+	while (is_space1(*str))
 		++str;
-	}
+	while (*str == '+' || *str == '-')
+		sign *= (*str++ == '-') ? -1 : 1;
 	while (str[i] != '\0' && ft_check_strnum(str[i], base) != -1)
 	{
 		result *= base_len;
