@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 21:55:01 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/11 16:24:53 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/02 18:29:39 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/11 20:06:28 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int					ft_sqrt(int nb)
+int		ft_iterative_power(int nb, int power)
 {
-	unsigned int	i;
+	int result;
 
-	i = 1;
-	if (nb < 0)
+	result = 1;
+	if (power < 0)
 		return (0);
-	while (i * i <= (unsigned int)nb)
+	if (power == 0)
+		return (1);
+	while (power > 0)
 	{
-		if (i * i == (unsigned int)nb)
-			return (i);
-		i++;
+		result *= nb;
+		--power;
 	}
-	return (0);
+	return (result);
 }
