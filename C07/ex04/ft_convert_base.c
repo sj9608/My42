@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 01:46:45 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/14 03:33:13 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/15 16:44:47 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ char		*ft_putnbr(int nbr, char *base, int base_num)
 {
 	int		i;
 	char	*temp;
+	int		nbr_len;
 
 	i = 0;
-	temp = malloc(sizeof(char) * base_num + 1);
+	nbr_len = 0;
 	if (nbr == -2147483648)
 	{
 		ft_putnbr(nbr / base_num, base, base_num);
@@ -65,14 +66,16 @@ char		*ft_putnbr(int nbr, char *base, int base_num)
 void		ft_putnbr_base(int nbr, char *base)
 {
 	int		base_len;
+	char	*temp;
 
 	if (!is_base_valid(base))
 		return ;
 	base_len = ft_strlen2(base);
+	temp = malloc(sizeof(char) * base_len + 1);
 	ft_putnbr(nbr, base, base_len);
 }
 
-int			ft_atoi_base(char *str, char *base)
+int			ft_atoi(char *str, char *base)
 {
 	int		i;
 	int		sign;
@@ -82,8 +85,8 @@ int			ft_atoi_base(char *str, char *base)
 	i = 0;
 	sign = 1;
 	result = 0;
-	base_len = ft_strlen3(base);
-	if (!is_base_valid2(base))
+	base_len = ft_strlen(base);
+	if (!is_base_valid(base))
 		return (0);
 	while (is_space1(*str))
 		++str;
@@ -103,6 +106,6 @@ char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	int		decimal;
 	char	*result;
 
-	decimal = ft_atoi_base(nbr, base_from);
-	//ft_putnbr_base
+	decimal = ft_nbr_atoi(nbr, base_from);
+	ft_nbr_to_base(decimal, base_to);
 }

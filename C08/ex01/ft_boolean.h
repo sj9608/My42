@@ -1,13 +1,12 @@
 #ifndef __FT_BOOLEAN_H__
 #define __FT_BOOLEAN_H__
-typedef enum
-{
-	false = 0,
-	true = 1
-} t_bool;
 
-#define FALSE false
-#define TRUE true
+# include <unistd.h>
+
+typedef int t_bool;
+
+#define FALSE 0
+#define TRUE 1
 
 #define EVEN(nbr) (nbr % 2 == 0)
 
