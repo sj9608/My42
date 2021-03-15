@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/13 12:42:13 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/13 12:42:32 by seungjle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int		abs(int n)
 {
-	return n < 0 ? -n : n;
+	return (n < 0 ? -n : n);
 }
 
 int		promissing(int *cols, int level)
@@ -54,5 +66,5 @@ int		ft_ten_queens_puzzle(void)
 	int count;
 	int board[10][10];
 
-
+	return (0);
 }
