@@ -6,20 +6,20 @@
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 01:46:45 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/15 16:44:47 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/15 19:50:37 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str);
-int		is_space(char c);
-int		is_base_valid(char *base);
+int				ft_strlen(char *str);
+int				is_space(char c);
+int				is_base_valid(char *base);
 
-int		is_base_valid(char *base)
+int				is_base_valid(char *base)
 {
-	int index;
-	int chk_index;
+	int 		index;
+	int 		chk_index;
 
 	index = 0;
 	if (*base == '\0' || ft_strlen(base) < 2)
@@ -40,20 +40,15 @@ int		is_base_valid(char *base)
 	return (1);
 }
 
-char		*ft_putnbr(int nbr, char *base, int base_num)
+char			*ft_putnbr(int nbr, char *base, int base_num)
 {
-	int		i;
-	char	*temp;
-	int		nbr_len;
+	long long	i;
+	char		*temp;
+	int			nbr_len;
 
 	i = 0;
 	nbr_len = 0;
-	if (nbr == -2147483648)
-	{
-		ft_putnbr(nbr / base_num, base, base_num);
-		write(1, &base[(nbr % base_num) * -1], 1);
-	}
-	else if (nbr < 0)
+	if (nbr < 0)
 	{
 		write(1, "-", 1);
 		nbr = nbr * -1;
@@ -63,10 +58,10 @@ char		*ft_putnbr(int nbr, char *base, int base_num)
 	write(1, &base[nbr % base_num], 1);
 }
 
-void		ft_putnbr_base(int nbr, char *base)
+void			ft_putnbr_base(int nbr, char *base)
 {
-	int		base_len;
-	char	*temp;
+	int			base_len;
+	char		*temp;
 
 	if (!is_base_valid(base))
 		return ;
@@ -75,12 +70,12 @@ void		ft_putnbr_base(int nbr, char *base)
 	ft_putnbr(nbr, base, base_len);
 }
 
-int			ft_atoi(char *str, char *base)
+int				ft_atoi(char *str, char *base)
 {
-	int		i;
-	int		sign;
-	int		result;
-	int		base_len;
+	int			i;
+	int			sign;
+	int			result;
+	int			base_len;
 
 	i = 0;
 	sign = 1;
@@ -101,10 +96,10 @@ int			ft_atoi(char *str, char *base)
 	return (result);
 }
 
-char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
+char			*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int		decimal;
-	char	*result;
+	int			decimal;
+	char		*result;
 
 	decimal = ft_nbr_atoi(nbr, base_from);
 	ft_nbr_to_base(decimal, base_to);
