@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 19:25:20 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/03/14 23:24:58 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/15 22:12:06 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,8 @@ void	print_all(int cnt, char *str, t_dict *head, char **place)
 	{
 		one_num(head, str + index, 1);
 		sec_num(head, str + index + 1);
-		if (cnt > 0 && ft_strncmp(str + index, "000", 3))
-			flag_putstr(place[--cnt]);
+		(cnt > 0 && ft_strncmp(str + index, "000", 3)) ?
+			flag_putstr(place[--cnt]) : --cnt;
 		index += 3;
 	}
 	write(1, "\n", 1);

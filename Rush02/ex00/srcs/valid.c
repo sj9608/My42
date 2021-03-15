@@ -37,9 +37,9 @@ char		*ft_arg_valid(char *arg)
 	temp = arg;
 	while (*temp)
 	{
-		if (temp[0] == '0' && is_digit(*(temp + 1)))
+		if (arg[0] == '0' && is_digit(*(temp + 1)))
 			return (0);
-		else if (temp[0] == '+')
+		else if (arg[0] == '+')
 		{
 			while (temp[i])
 			{
