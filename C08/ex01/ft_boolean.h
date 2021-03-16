@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:18:20 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 21:19:46 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/17 01:30:32 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-typedef int t_bool;
+typedef int	t_bool;
 
 # define FALSE 0
 # define TRUE 1

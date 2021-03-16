@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:22:31 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 23:31:56 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 23:46:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,11 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	while (i < ac)
 	{
 		s[i].size = ft_strlen(av[i]);
-		s[i].str = (char*)malloc(s[i].size + 1);
+		s[i].str = av[i];
 		s[i].copy = (char*)malloc(s[i].size + 1);
-		ft_strcpy(s[i].str, av[i]);
 		ft_strcpy(s[i].copy, av[i]);
 		++i;
 	}
 	s[i].str = 0;
-	s[i].copy = 0;
 	return (s);
 }
