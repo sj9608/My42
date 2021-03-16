@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:32:27 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 17:34:25 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 19:01:57 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 	size = max - min;
 	if (min >= max)
 		return (0);
-	else if (!(temp = malloc(sizeof(int) * size)))
+	else if (!(temp = (int *)malloc(sizeof(int) * size)))
 		return (-1);
 	*range = temp;
 	while (index < size)
