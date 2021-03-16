@@ -6,12 +6,12 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:19:18 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 21:19:40 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/17 02:02:24 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) (Value < 0 ? -Value : Value)
+# define ABS(nbr) (nbr < 0 ? -nbr : nbr)
 #endif
