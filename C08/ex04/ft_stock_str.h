@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 21:19:18 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 21:19:40 by seungjle         ###   ########.fr       */
+/*   Created: 2021/03/16 21:36:15 by seungjle          #+#    #+#             */
+/*   Updated: 2021/03/16 21:36:45 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
-# define FT_ABS_H
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-# define ABS(Value) (Value < 0 ? -Value : Value)
+typedef struct	s_stock_str
+{
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
+
 #endif
