@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 22:53:26 by seshim            #+#    #+#             */
-/*   Updated: 2021/03/14 23:40:48 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 11:16:19 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			plus_check(char buf, int *first, int i)
 		return (0);
 }
 
-int		is_digit(char c)
+int			is_digit(char c)
 {
 	return ('0' <= c && c <= '9');
 }
@@ -36,7 +36,6 @@ char		*ft_arg_valid(char *arg)
 	i = 1;
 	temp = arg;
 	while (*temp)
-	{
 		if (arg[0] == '0' && is_digit(*(temp + 1)))
 			return (0);
 		else if (arg[0] == '+')
@@ -53,7 +52,6 @@ char		*ft_arg_valid(char *arg)
 			return (0);
 		else
 			temp++;
-	}
 	if (arg[0] == '+')
 		arg = arg + 1;
 	return (arg);
