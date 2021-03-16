@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 01:46:45 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/15 19:50:37 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 18:27:27 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int				is_base_valid(char *base);
 
 int				is_base_valid(char *base)
 {
-	int 		index;
-	int 		chk_index;
+	int			index;
+	int			chk_index;
 
 	index = 0;
 	if (*base == '\0' || ft_strlen(base) < 2)
