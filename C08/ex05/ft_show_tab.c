@@ -6,7 +6,7 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:48:58 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/17 03:45:02 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/17 04:11:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		ft_show_tab(struct s_stock_str *par)
 	int		i;
 
 	i = 0;
-	while (par[i].str != '\0')
+	while (par[i].str != 0)
 	{
 		ft_putstr(par[i].str);
 		write(1, "\n", 1);
