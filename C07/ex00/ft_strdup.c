@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:16:04 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/12 23:14:40 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:33:48 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
-char	*ft_strdup(char *src)
+char		*ft_strdup(char *src)
 {
-	int index;
-	char *temp;
+	int		index;
+	char	*temp;
 
 	index = 0;
 	while (src[index] != '\0')
@@ -33,22 +31,4 @@ char	*ft_strdup(char *src)
 	}
 	temp[index] = '\0';
 	return (temp);
-}
-
-int		main(void)
-{
-	char s1[] = "hello";
-	char *s3 = "";
-	char *s4 = "";
-	printf("s1 : %s\n", s1);
-	printf("s3 : %s\n", s3);
-	printf("s4 : %s\n", s4);
-
-	s3 = strdup(s1);
-	s4 = ft_strdup(s1);
-	printf("\n");
-	printf("s3 : %s\n", s3);
-	printf("s4 : %s\n", s4);
-
-	return (0);
 }

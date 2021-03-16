@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:12:53 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/13 01:28:30 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:36:04 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *s)
+int			ft_strlen(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -22,9 +22,9 @@ int		ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strcpy(char *s1, char *s2)
+char		*ft_strcpy(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s2[i])
@@ -36,10 +36,10 @@ char	*ft_strcpy(char *s1, char *s2)
 	return (s1);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char		*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -54,7 +54,7 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-int		ft_chk_len(int size, char **strs, char *sep)
+int			ft_chk_len(int size, char **strs, char *sep)
 {
 	int		i;
 	int		result;
@@ -72,7 +72,7 @@ int		ft_chk_len(int size, char **strs, char *sep)
 	return (result);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char		*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		total_len;
 	int		i;
@@ -93,30 +93,4 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	result[total_len] = 0;
 	return (result);
-}
-
-#include <stdlib.h>
-#include <stdio.h>
-
-int		main(void)
-{
-	int		index;
-	char	**strs;
-	char	*separator;
-	char	*result;
-
-	strs = (char**)malloc(4 * sizeof(strs));
-	strs[0] = "lol";
-	strs[1] = "1234";
-	strs[2] = "poiuic";
-	strs[3] = "1234";
-	separator = "|";
-	index = 0;
-	while (index < 4)
-	{
-		result = ft_strjoin(index, strs, separator);
-		printf("result with size = %d : $%s$\n", index, result);
-		free(result);
-		index++;
-	}
 }

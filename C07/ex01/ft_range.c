@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:16:11 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/12 22:59:47 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:34:08 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		*ft_range(int min, int max)
 {
-	int *result;
-	int index;
-	int size;
+	int	*result;
+	int	index;
+	int	size;
 
 	index = 0;
 	size = max - min;
@@ -29,19 +29,4 @@ int		*ft_range(int min, int max)
 		++index;
 	}
 	return (result);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	int *test;
-
-	test = ft_range(23, 55);
-	while (*test)
-	{
-		printf("%d ", *test);
-		++test;
-	}
-	return (0);
 }
