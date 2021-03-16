@@ -6,16 +6,16 @@
 /*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:22:31 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/16 22:46:38 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/16 23:31:56 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_str.h"
 
-int			ft_strlen(char *s)
+int					ft_strlen(char *s)
 {
-	int	i;
+	int				i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -23,9 +23,9 @@ int			ft_strlen(char *s)
 	return (i);
 }
 
-char		*ft_strcpy(char *s1, char *s2)
+char				*ft_strcpy(char *s1, char *s2)
 {
-	int	i;
+	int				i;
 
 	i = 0;
 	while (s2[i])
@@ -39,8 +39,8 @@ char		*ft_strcpy(char *s1, char *s2)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	t_stock_str *s;
-	int			i;
+	t_stock_str		*s;
+	int				i;
 
 	s = (t_stock_str*)malloc(sizeof(t_stock_str) * (ac + 1));
 	if (!s)
