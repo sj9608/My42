@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 02:01:12 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/15 16:44:48 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/18 17:02:09 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int		abs(int n)
+{
+	return ((n < 0) ? -n : n);
+}
 
 int		is_space(char c)
 {
