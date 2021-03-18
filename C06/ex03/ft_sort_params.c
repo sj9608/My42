@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungjle <seungjle@studnet.42seoul.>       +#+  +:+       +#+        */
+/*   By: seungjle <seungjle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 15:50:32 by seungjle          #+#    #+#             */
-/*   Updated: 2021/03/09 23:31:19 by seungjle         ###   ########.fr       */
+/*   Updated: 2021/03/18 15:22:58 by seungjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void		ft_sort(int argc, char *argv[])
 	int		j;
 	char	*temp;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
-		j = 1;
+		j = 2;
 		while (j < argc - i)
 		{
 			if (ft_strcmp(argv[j - 1], argv[j]) > 0)
@@ -57,9 +57,7 @@ int			main(int argc, char *argv[])
 	while (i < argc)
 	{
 		while (*argv[i])
-		{
 			write(1, argv[i]++, 1);
-		}
 		write(1, "\n", 1);
 		++i;
 	}
